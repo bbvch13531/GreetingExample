@@ -18,6 +18,7 @@
 		AA0C7E6E22DD76BC009E45BB /* GoodbyeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0C7E6D22DD76BC009E45BB /* GoodbyeViewModel.swift */; };
 		AA0C7E7022DD76D2009E45BB /* GoodbyeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0C7E6F22DD76D2009E45BB /* GoodbyeViewController.swift */; };
 		AA5D3A4B22DFFFF400187A06 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5D3A4A22DFFFF400187A06 /* DataProvider.swift */; };
+		AA5D3A5122E0390700187A06 /* SendDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5D3A5022E0390700187A06 /* SendDataService.swift */; };
 		BCC393C4ACCAD1FB34DEA91E /* Pods_GreetingExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A76200F8CA1A4C5C320BC741 /* Pods_GreetingExample.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,7 @@
 		AA0C7E6D22DD76BC009E45BB /* GoodbyeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodbyeViewModel.swift; sourceTree = "<group>"; };
 		AA0C7E6F22DD76D2009E45BB /* GoodbyeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodbyeViewController.swift; sourceTree = "<group>"; };
 		AA5D3A4A22DFFFF400187A06 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		AA5D3A5022E0390700187A06 /* SendDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendDataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +96,7 @@
 				AA0C7E6522DD7487009E45BB /* ViewModel */,
 				AA0C7E6422DD7482009E45BB /* Model */,
 				AA08E3FB22DD73D80026A5AD /* AppDelegate.swift */,
-				AA5D3A4A22DFFFF400187A06 /* DataProvider.swift */,
+				AA5D3A4F22E038E900187A06 /* Service */,
 				AA08E3FF22DD73D80026A5AD /* Main.storyboard */,
 				AA08E40522DD73D90026A5AD /* Assets.xcassets */,
 				AA08E40722DD73D90026A5AD /* LaunchScreen.storyboard */,
@@ -128,6 +130,15 @@
 				AA0C7E6F22DD76D2009E45BB /* GoodbyeViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		AA5D3A4F22E038E900187A06 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				AA5D3A4A22DFFFF400187A06 /* DataProvider.swift */,
+				AA5D3A5022E0390700187A06 /* SendDataService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,6 +262,7 @@
 				AA0C7E6C22DD74C1009E45BB /* GreetingViewModel.swift in Sources */,
 				AA08E40422DD73D80026A5AD /* GreetingExample.xcdatamodeld in Sources */,
 				AA0C7E6822DD7493009E45BB /* Person.swift in Sources */,
+				AA5D3A5122E0390700187A06 /* SendDataService.swift in Sources */,
 				AA0C7E6A22DD74AE009E45BB /* GreetingViewController.swift in Sources */,
 				AA08E3FC22DD73D80026A5AD /* AppDelegate.swift in Sources */,
 			);

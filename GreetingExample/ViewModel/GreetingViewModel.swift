@@ -11,9 +11,9 @@ import RxSwift
 import RxRelay
 import RxCocoa
 
-class GreetingViewModel {
-    var firstName = BehaviorRelay<String>(value: "")
-    var lastName = BehaviorRelay<String>(value: "")
+struct GreetingViewModel {
+    let firstName = BehaviorRelay<String>(value: "")
+    let lastName = BehaviorRelay<String>(value: "")
     
     var message: Observable<String> {
         return Observable.combineLatest(firstName.asObservable(), lastName.asObservable()) { first, last in

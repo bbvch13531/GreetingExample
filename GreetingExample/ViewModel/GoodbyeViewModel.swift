@@ -12,8 +12,8 @@ import RxRelay
 import RxCocoa
 
 class GoodbyeViewModel {
-    var firstName = BehaviorRelay<String>(value: "")
-    var lastName = BehaviorRelay<String>(value: "")
+    var firstName: BehaviorRelay<String>
+    var lastName: BehaviorRelay<String>
     
 //    var dataProvider: DataProvider?
     
@@ -23,6 +23,10 @@ class GoodbyeViewModel {
         }
     }
     
+    init(_ firstName: String, _ lastName: String){
+        self.firstName = BehaviorRelay<String>(value: firstName)
+        self.lastName = BehaviorRelay<String>(value: lastName)
+    }
 //    init(){
 //        self.dataProvider = DataProvider()
 //    }

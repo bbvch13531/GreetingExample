@@ -8,16 +8,35 @@
 
 import Foundation
 import UIKit
+import RxSwift
 
 class GoodbyeViwController: UIViewController {
     
-    @IBOutlet weak var goodByeLabel: UILabel!
+    var goodByeLabel = UILabel(frame: CGRect(x: 50, y: 50, width: 200, height: 50))
     
-    var viewModel = GoodbyeViewModel()
+    var disposeBag = DisposeBag()
+    var viewModel: GoodbyeViewModel?
+    /*
+    var viewModel: GoodbyeViewModel? {
+        didSet {
+            viewModel?.message.bind(to: goodByeLabel!.rx.text)
+            .disposed(by: disposeBag)
+        }
+    }
+    */
+    init(firstName: String, lastName: String){
+        super.init(nibName: nil, bundle: nil)
+        self.viewModel = GoodbyeViewModel(firstName, lastName)
+        viewModel?.message.bind(to: goodByeLabel.rx.text)
+            .disposed(by: disposeBag)
+    }
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        _ = viewModel.message.bind(to: goodByeLabel.rx.text)
+        self.view.backgroundColor = .white
+        self.view.addSubview(goodByeLabel)
     }
 }
