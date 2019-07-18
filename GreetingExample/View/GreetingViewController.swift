@@ -38,8 +38,8 @@ class GreetingViewController: UIViewController {
             print("prepare")
 //            let dataProvider = DataProvider(firstNameLabel.text!, lastNameLabel.text!)
 //            destVC.viewModel.dataProvider = dataProvider
-            destVC.viewModel.firstName.accept(firstNameLabel.text!)
-            destVC.viewModel.lastName.accept(lastNameLabel.text!)
+            destVC.viewModel.firstName.accept(firstNameLabel.text ?? "")
+            destVC.viewModel.lastName.accept(lastNameLabel.text ?? "")
         }
     }
     
