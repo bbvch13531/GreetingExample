@@ -25,8 +25,6 @@ class GoodbyeViwController: UIViewController {
  
     init(firstName: String, lastName: String){
         self.viewModel = GoodbyeViewModel(firstName, lastName)
-        viewModel.message.bind(to: goodByeLabel.rx.text)
-            .disposed(by: disposeBag)
         super.init(nibName: nil, bundle: nil)
     }
     
