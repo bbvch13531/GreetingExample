@@ -11,11 +11,9 @@ import RxSwift
 import RxRelay
 import RxCocoa
 
-class GoodbyeViewModel {
+struct GoodbyeViewModel {
     var firstName: BehaviorRelay<String>
     var lastName: BehaviorRelay<String>
-    
-//    var dataProvider: DataProvider?
     
     var message: Observable<String> {
         return Observable.combineLatest(firstName.asObservable(), lastName.asObservable()) { first, last in
@@ -23,19 +21,13 @@ class GoodbyeViewModel {
         }
     }
     
+    init() {
+        self.firstName = BehaviorRelay<String>(value: "")
+        self.lastName = BehaviorRelay<String>(value: "")
+    }
+    
     init(_ firstName: String, _ lastName: String){
         self.firstName = BehaviorRelay<String>(value: firstName)
         self.lastName = BehaviorRelay<String>(value: lastName)
     }
-//    init(){
-//        self.dataProvider = DataProvider()
-//    }
-    
-//    init(dataProvider: DataProvider) {
-//////        firstName.accept(dataProvider.firstName)
-//////        lastName.accept(dataProvider.lastName)
-//        self.dataProvider = dataProvider
-//    }
-    // TODO:
-//    var person: Person?
 }

@@ -12,8 +12,8 @@ import RxRelay
 import RxCocoa
 
 struct GreetingViewModel {
-    let firstName = BehaviorRelay<String>(value: "")
-    let lastName = BehaviorRelay<String>(value: "")
+    let firstName: BehaviorRelay<String>
+    let lastName: BehaviorRelay<String>
     
     var message: Observable<String> {
         return Observable.combineLatest(firstName.asObservable(), lastName.asObservable()) { first, last in
@@ -21,6 +21,13 @@ struct GreetingViewModel {
         }
     }
     
-    // TODO: use person model class
-//    let person: Person? = nil
+    init() {
+        self.firstName = BehaviorRelay<String>(value: "")
+        self.lastName = BehaviorRelay<String>(value: "")
+    }
+    
+    init(_ firstName: String, _ lastName: String){
+        self.firstName = BehaviorRelay<String>(value: firstName)
+        self.lastName = BehaviorRelay<String>(value: lastName)
+    }
 }

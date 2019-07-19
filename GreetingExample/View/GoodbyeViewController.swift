@@ -15,23 +15,29 @@ class GoodbyeViwController: UIViewController {
     var goodByeLabel = UILabel(frame: CGRect(x: 50, y: 50, width: 200, height: 50))
     
     var disposeBag = DisposeBag()
-    var viewModel: GoodbyeViewModel?
-    /*
-    var viewModel: GoodbyeViewModel? {
+
+    var viewModel: GoodbyeViewModel{
         didSet {
-            viewModel?.message.bind(to: goodByeLabel!.rx.text)
+            viewModel.message.bind(to: goodByeLabel.rx.text)
             .disposed(by: disposeBag)
         }
     }
-    */
+ 
     init(firstName: String, lastName: String){
-        super.init(nibName: nil, bundle: nil)
         self.viewModel = GoodbyeViewModel(firstName, lastName)
-        viewModel?.message.bind(to: goodByeLabel.rx.text)
+        viewModel.message.bind(to: goodByeLabel.rx.text)
             .disposed(by: disposeBag)
+        super.init(nibName: nil, bundle: nil)
     }
+    
+    convenience init(){
+        self.init(firstName: "", lastName: "")
+    }
+    
     required init?(coder aDecoder: NSCoder) {
+        self.viewModel = GoodbyeViewModel()
         super.init(coder: aDecoder)
+        
     }
     
     override func viewDidLoad() {
